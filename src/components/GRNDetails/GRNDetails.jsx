@@ -81,10 +81,12 @@ const GRNDetails = () => {
         const responseAPI = await getGRNById(grnId);
         const data = {
             ...responseAPI.data,
+      
             products: responseAPI.data.products.map((product) => {
                 return {
                     ...product,
-                    imported_quantity: product.quantity
+                    imported_quantity: product.quantity,
+                    image: product.image
                 }
             })
         };
@@ -163,7 +165,17 @@ const GRNDetails = () => {
     const handleImportGRN = async () => {
         const responseAPI = await importGRN(grnId);
         if (responseAPI.status_code === 200) {
-            alert("Nhập hàng thành công");
+            toast(<Notification
+                type={"success"}
+                withIcon
+                message={"Nhập hàng thành công"}
+            />,
+                {
+                    autoClose: 4000,
+                    closeButton: false,
+                    hideProgressBar: true,
+                }
+            )
             fetchDetailGRN();
         } 
     }

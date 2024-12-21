@@ -48,7 +48,7 @@ const CreateGRN = () => {
             return {
                 id: detail.id,
                 name: detail.name,
-                image: detail.image.url,
+                image: detail.image,
                 price: detail.price,
                 imported_quantity: 0,
                 unit: detail.product_unit ? detail.product_unit : "------",
@@ -375,7 +375,7 @@ const CreateGRN = () => {
                                                                 {
                                                                     id: id,
                                                                     name: productSelectList.find(product => product.id === id)?.name,
-                                                                    image: productSelectList.find(product => product.id === id)?.image?.[0].url,
+                                                                    image: productSelectList.find(product => product.id === id)?.image,
                                                                     unit: productSelectList.find(product => product.id === id)?.unit || "------",
                                                                     imported_quantity: 0,
                                                                     price: productSelectList.find(product => product.id === id)?.cost_price,

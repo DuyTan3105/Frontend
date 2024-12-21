@@ -84,12 +84,13 @@ const GINProductsTable = ({
 						<tr key={index} className={s.tableRow}>
 							{Object.entries(productsTableColgroup).map(([key, col]) => {
 								if (key === "image") {
+									console.log(product);
 									return (
 										<td
 											key={key}
 											className={cn(s.tableCell, s.tableCellBody, col.align)}
 										>
-											<img src={product.image?.url} alt="" />
+											<img src={product?.image?.url || product?.image?.[0]?.url} alt="" />
 										</td>
 									);
 								} else if (key === "name") {

@@ -353,7 +353,7 @@ const CreateGIN = () => {
 																			)?.name,
 																			image: productSelectList.find(
 																				(product) => product.id === id
-																			)?.image?.[0]?.url,
+																			)?.image,
 																			unit:
 																				productSelectList.find(
 																					(product) => product.id === id

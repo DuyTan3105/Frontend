@@ -11,6 +11,8 @@ import ListSelectPopup from '../ListSelectPopup/ListSelectPopup';
 import { getGRNById } from '../../service/GRNApi';
 import { formatPrice } from '../../utils/PriceUtils';
 import { createReturn } from '../../service/RefundInformationAPI';
+import Notification from '../Notification/Notification';
+import { toast } from 'react-toastify';
 
 const CreateReturn = () => {
     const navigate = useNavigate();
@@ -98,7 +100,17 @@ const CreateReturn = () => {
     const handleReturn = async () => {
         const response = await createReturn(dataBody);
         if (response.status_code === 201) {
-            alert("Tạo hoàn trả thành công");
+            toast(<Notification
+                type={"success"}
+                withIcon
+                message={"Tạo hoàn trả thành công"}
+            />,
+                {
+                    autoClose: 4000,
+                    closeButton: false,
+                    hideProgressBar: true,
+                }
+            )
             navigate(`/admin/grns/GRN/${grnId}`);
         }
     }
