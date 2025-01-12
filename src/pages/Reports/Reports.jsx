@@ -57,8 +57,8 @@ const Reports = () => {
     keyword: null,
     user_created_ids: null,
     payment_methods: null,
-    date_from: "2023-10-10",
-    date_to: "2024-10-10",
+    date_from: "2024-10-10",
+    date_to: "2025-10-10",
     date_type: "CREATED_AT",
   });
 
