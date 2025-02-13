@@ -25,7 +25,7 @@ const ordersListColgroup = {
         align: "text-start"
     },
     quantity: {
-        name: "SL đặt",
+        name: "SL nhập",
         width: "160px",
         align: "text-center"
     },

@@ -21,12 +21,12 @@ const productsTableColgroup = {
         align: "text-start"
     },
     ordered_quantity: {
-        name: "SL đặt",
+        name: "SL nhập",
         width: "150px",
         align: "text-center"
     },
     imported_quantity: {
-        name: "SL nhập",
+        name: "SL đặt",
         width: "150px",
         align: "text-center"
     },
